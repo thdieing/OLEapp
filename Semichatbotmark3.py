@@ -237,8 +237,7 @@ if answer1:
     if val1==1:
         answer2= st.radio(label="Companion: Welche(n) Bildungsweg(e) kannst du dir vorstellen?",
         key="q2",
-        options=["Ausbildung", "Duales Studium", "Studium", "Ich weiß es gerade noch nicht, ich will mich erst einmal umsehen."],
-        index=None)
+        options=["Ausbildung", "Duales Studium", "Studium", "Ich weiß es gerade noch nicht, ich will mich erst einmal umsehen."])
         if answer2:
             val2,datafilter= reaction2(answer2,datafilter)
             if  val2==1:
