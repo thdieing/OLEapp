@@ -6,7 +6,6 @@ from Levenshtein import distance
 import spacy
 import time
 import openpyxl
-python -m spacy download de_core_news_sm
 today = date.today()
 todaychar = today.strftime("%Y-%m-%d")
 
