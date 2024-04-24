@@ -22,7 +22,13 @@ datafilter=data
 
 osadata=pd.read_excel('OSA.xlsx', nrows=136)
 # Load the German language model
-nlp = spacy.load("de_core_news_sm")
+try:
+    nlp = spacy.load("de_core_news_sm")
+except OSError:
+    import sys
+    import subprocess
+    subprocess.check_call([sys.executable, "-m", "spacy", "download", "de_core_news_sm"])
+    nlp = spacy.load("de_core_news_sm")
 
 def questionInterest(nouns, df):
     matching_sentences = []
