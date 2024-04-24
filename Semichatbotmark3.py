@@ -22,8 +22,16 @@ datafilter=data
 osadata=pd.read_excel('OSA.xlsx', nrows=136)
 # Load the German language model
 
-nlp = spacy.load("de_core_news_sm")
-
+#nlp = spacy.load("de_core_news_sm")
+def extract_nouns(text):
+    # Tokenize the text into words
+    words = text.split()
+    
+    # Filter out words that start with a capital letter (likely nouns)
+    nouns = [word for word in words if word[0].isupper()]
+    
+    return nouns
+    
 def questionInterest(nouns, df):
     matching_sentences = []
     sentences1 = df["Nouns"]
@@ -251,8 +259,9 @@ if answer1:
                             if val4==1:
                                 answer5= st.text_input("Companion: In welchen Bereichen liegen deine Fähigkeiten/Interessen?")
                                 if answer5:
-                                    doc = nlp(answer5)
-                                    nouns = [token.text for token in doc if token.pos_ == "NOUN"]
+                                    #doc = nlp(answer5)
+                                    #nouns = [token.text for token in doc if token.pos_ == "NOUN"]
+                                    nouns= extract_nouns(answer5)
                                     st.write("Companion: Du hast folgende Fähigkeiten/Interessen genannt:")
                                     for noun in nouns:
                                         st.write("- "+ noun)
