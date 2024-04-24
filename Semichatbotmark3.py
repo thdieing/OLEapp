@@ -235,8 +235,7 @@ answer1 = st.select_slider(
 if answer1:
     val1=reaction1(answer1)
     if val1==1:
-        answer2= st.radio(
-        label="Companion: Welche(n) Bildungsweg(e) kannst du dir vorstellen?",
+        answer2= st.radio(label="Companion: Welche(n) Bildungsweg(e) kannst du dir vorstellen?",
         key="q2",
         options=["Ausbildung", "Duales Studium", "Studium", "Ich weiß es gerade noch nicht, ich will mich erst einmal umsehen."],
         index=None)
