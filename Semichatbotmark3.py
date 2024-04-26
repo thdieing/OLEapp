@@ -100,7 +100,7 @@ def reaction3(answer3, datafilter):
          st.write("Companion: Wenn du dir nach den Infos sicher bist kannst du oben einen Bereich auswählen der dich interessiert")
          dd= datafilter.drop_duplicates(subset=["info"])
          macrofieldtext=dd["info"].tolist()
-         macro= dd["Macro_field"].tolist()
+         macro= dd["Field"].tolist()
          c="NA"
          for a,b in zip(macro, macrofieldtext):
              if a !=c:
@@ -241,9 +241,9 @@ if answer1:
         if answer2:
             val2,datafilter= reaction2(answer2,datafilter)
             if  val2==1:
-                macrofield=datafilter["Macro_field"].unique().tolist()
+                macrofield=datafilter["Field"].unique().tolist()
                 macrofield.append("Ich weiß es gerade noch nicht, ich will mich erst einmal umsehen.")
-                print(len(datafilter["Macro_field"].tolist()))
+                print(len(datafilter["Field"].tolist()))
                 answer3= st.multiselect('Companion: Welche Bereiche interessieren dich?',macrofield,default=None)
                 if answer3:
                     print(answer3)
