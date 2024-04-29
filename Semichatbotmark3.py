@@ -255,6 +255,10 @@ if answer1:
                         if answer4:
                             val4, datafilter=reaction4(answer4, answer4b,datafilter)
                             if val4==1:
+                                answer98= st.multiselect("Companion: In welchen Bereichen liegen deine Fähigkeiten?",["Deutsch", "Mathe", "Englisch", "Bio"],default=None)
+                                answer99 = st.select_slider(label="Companion: Wie sicher bist du dir darüber, in welchen Bereichen deine Fähigkeiten liegen?",
+                                                               options=["Keine Anwort",'1 gar nicht','2 weniger','3 etwas','4 ziemlich', "5 sehr"],key="q99",value="Keine Anwort")
+                                answer99b=st.button("Ich weiß es gerade noch nicht, ich will mich erst einmal umsehen.", key="q99b")
                                 answer5= st.text_input("Companion: In welchen Bereichen liegen deine Fähigkeiten/Interessen?")
                                 if answer5:
                                     #doc = nlp(answer5)
