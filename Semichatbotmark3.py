@@ -350,7 +350,7 @@ if answer1:
                                                             link= datafilter["Uniprogrammlink"].tolist()
                                                             st.write("*Companion: Momentan kommen diese Unis mit den folgenden Studiengängen infrage:*")
                                                             if len(programm)>5:
-                                                                st.write("Um die Ergebnisse noch weiter einzugrenzen empfehele ich die andern Faregn nochmal zu besuchen.")
+                                                                st.write("Um die Ergebnisse noch weiter einzugrenzen empfehle ich die anderen Fragen nochmal zu besuchen.")
                                                             for programmitem, uniitem , linkitem in zip(programm,uni, link):
                                                                 if not pd.isna(uniitem):
                                                                     st.write(uniitem, ": ",programmitem)
@@ -367,7 +367,7 @@ if answer1:
                                                             uni= datafilter["UNIname"].tolist()
                                                             link= datafilter["Uniprogrammlink"].tolist()
                                                             if len(programm)>5:
-                                                                st.write("Um die Ergebnisse noch weiter einzugrenzen empfehele ich die andern Faregn nochmal zu besuchen.")
+                                                                st.write("Um die Ergebnisse noch weiter einzugrenzen empfehle ich die anderen Fragen nochmal zu besuchen.")
                                                             for programmitem, uniitem , linkitem in zip(programm,uni, link):
                                                                 if not pd.isna(uniitem):
                                                                     st.write(uniitem, ": ",programmitem)
@@ -382,7 +382,7 @@ if answer1:
                                                         uni= datafilter["UNIname"].tolist()
                                                         link= datafilter["Uniprogrammlink"].tolist()
                                                         if len(programm)>5:
-                                                                st.write("Um die Ergebnisse noch weiter einzugrenzen empfehele ich die andern Faregn nochmal zu besuchen.")
+                                                                st.write("Um die Ergebnisse noch weiter einzugrenzen empfehle ich die anderen Fragen nochmal zu besuchen.")
                                                         for programmitem, uniitem , linkitem in zip(programm,uni, link):
                                                             if not pd.isna(uniitem):
                                                                 st.write(uniitem, ": ",programmitem)
