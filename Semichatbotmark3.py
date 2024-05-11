@@ -23,7 +23,15 @@ datafilter=data
 osadata=pd.read_excel('OSA.xlsx', nrows=136)
 # Load the German language model
 #nlp = spacy.load("de_core_news_sm")
-
+def extract_nouns(text):
+    # Tokenize the text into words
+    words = text.split()
+    
+    # Filter out words that start with a capital letter (likely nouns)
+    nouns = [word for word in words if word[0].isupper()]
+    
+    return nouns
+    
 def questionInterest(nouns, df):
     matching_sentences = []
     sentences1 = df["Nouns"]
