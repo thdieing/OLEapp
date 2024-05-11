@@ -3,7 +3,7 @@ import glob
 import pandas as pd
 from datetime import date
 from Levenshtein import distance
-import spacy
+#import spacy
 import time
 import openpyxl
 # add Text field extra question
@@ -22,7 +22,7 @@ datafilter=data
 
 osadata=pd.read_excel('OSA.xlsx', nrows=136)
 # Load the German language model
-nlp = spacy.load("de_core_news_sm")
+#nlp = spacy.load("de_core_news_sm")
 
 def questionInterest(nouns, df):
     matching_sentences = []
@@ -307,8 +307,9 @@ if answer1:
                                 if skip6:
                                     answer5= "Übersprungen"
                                 if answer5:
-                                    doc = nlp(answer5)
-                                    nouns = [token.text for token in doc if token.pos_ == "NOUN"]
+                                    #doc = nlp(answer5)
+                                    #nouns = [token.text for token in doc if token.pos_ == "NOUN"]
+                                    nouns= extract_nouns(answer5)
                                     st.write("Companion: Du hast folgende Fähigkeiten/Interessen genannt:")
                                     for noun in nouns:
                                         st.write("- "+ noun)
